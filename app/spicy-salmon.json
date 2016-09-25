@@ -1,0 +1,54 @@
+{
+	"fileId":"sdsff",
+	"id":"spicy-salmon",
+	"name":"Spicy Salmon With Bok Choy and Rice",
+	"serves":4,
+	"time":"20 min",
+	"nutritionalInfo":{
+		"calories":509,
+		"fat":"13g",
+		"satFat":"2g",
+		"protein":"44g",
+		"carbohydrate":"52g"
+	},
+	"ingredientsDescription":[
+		{
+			"name":"white rice",
+			"description":"1 cup long-grain white rice"
+		},
+		{
+			"name":"honey",
+			"description":"2 tablespoons honey"
+		},
+		{
+			"name":"soy sauce",
+			"description":"1 tablespoon soy sauce"
+		},
+		{
+			"name":"red pepper",
+			"description":"1/4 teaspoon crushed red pepper"
+		},
+		{
+			"name":"salmon",
+			"description":"4 6-ounce skinless salmon fillets"
+		},
+		{
+			"name":"baby bok choy",
+			"description":"1 pound baby bok choy"
+		},
+		{
+			"name":"heavy cream",
+			"description":"3/4 cup heavy cream"
+		},
+		{
+			"name":"spinach",
+			"description":"10 ounces baby spinach (about 12 cups)"
+		}
+	],
+	"directions":[
+		"Cook the rice according to the package directions.",
+		"Meanwhile, combine the honey, soy sauce, and red pepper. On a foil-lined rimmed baking sheet, broil the salmon fillets until opaque throughout, 8 to 10 minutes, basting with the honey mixture during the last 3 minutes.",
+		"Steam baby bok choy (cut into quarters) until tender, 8 to 10 minutes. Serve with the salmon and rice."
+	],
+	"image":"spicy-salmon.jpg"
+}

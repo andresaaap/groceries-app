@@ -1,0 +1,51 @@
+<article id="recipe-container">
+	<div class="recipe-header">
+		<div class="recipe-header-info">
+			<h2>{{recipe.recipe.name}}</h2>
+			<ul>
+				<li>Serves: {{recipe.recipe.serves}}</li>
+				<li>Time: {{recipe.recipe.time}}</li>
+			</ul>
+			<h3 id="nutritional-info">Nutritional info (Per serving)</h3>
+			<table>
+				<tr>
+					<td>Calories</td><td>{{recipe.recipe.nutritionalInfo.calories}}</td>
+				</tr>
+				<tr>
+					<td>Fat</td><td>{{recipe.recipe.nutritionalInfo.fat}}</td>
+				</tr>
+				<tr>
+					<td>Sat Fat</td><td>{{recipe.recipe.nutritionalInfo.satFat}}</td>
+				</tr>
+				<tr>
+					<td>Protein</td><td>{{recipe.recipe.nutritionalInfo.protein}}</td>
+				</tr>
+				<tr>
+					<td>Carbohydrate</td><td>{{recipe.recipe.nutritionalInfo.carbohydrate}}</td>
+				</tr>
+				<tr>
+					<td></td><td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="recipe-header-image">
+			<img src="images/{{recipe.recipe.image}}" alt="">
+		</div>
+	</div>
+	<div class="recipe-ingredients">
+		<h3>INGREDIENTS</h3>
+		<ul>
+			<li ng-repeat="ingredient in recipe.recipe.ingredientsDescription">{{ingredient.description}}</li>
+		</ul>
+	</div>
+	<div class="recipe-directions">
+		<h3>DIRECTIONS</h3>
+		<ol>
+			<li ng-repeat="description in recipe.recipe.directions">{{description}}</li>
+		</ol>
+	</div>
+
+	
+</article>
+
+

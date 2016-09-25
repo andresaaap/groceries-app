@@ -1,0 +1,26 @@
+{
+	"id":"adsa2",
+	"array":[
+		{
+			"id":"creamy-salmon",
+			"name":"Salmon With Creamy Cucumber-Fennel Salad",
+			"image":"creamy-salmon.jpg",
+			"simage":"creamy-salmon-s.jpg",
+			"description":"To speed up pre-dinner prep time, make the side salad up to 12 hours in advance; serve cool or at room temperature."
+		},
+		{
+			"id":"spicy-salmon",
+			"name":"Spicy Salmon With Bok Choy and Rice",
+			"image":"spicy-salmon.jpg",
+			"simage":"spicy-salmon-s.jpg",
+			"description":"Baste the fish with a mixture of honey, soy sauce, and crushed red pepper to give it a tasty glaze."
+		},
+		{
+			"id":"shrimp-pasta",
+			"name":"Shrimp, Leek, and Spinach Pasta",
+			"image":"shrimp-pasta.jpg",
+			"simage":"shrimp-pasta-s.jpg",
+			"description":"While the pasta cooks, sauté the leeks and shrimp in butter. The spinach will wilt naturally when combined with the warm pasta."
+		}
+	]
+}

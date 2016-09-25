@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Groceries planner App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+     <link rel="apple-touch-icon" sizes="60x60" href="images/apple-60.png">
+     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-76.png">
+     <link rel="apple-touch-icon" sizes="120x120" href="images/apple-120.png">
+     <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152x152.png">
+     <link rel="apple-touch-icon" sizes="167x167" href="images/apple-167.png">
+     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-180.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/jquery-ui.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="groceriesappApp" class="">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <header>
+      <nav ng-controller="PlannerCtrl as planner">
+          <h1>My Groceries Planner</h1>  
+          <a class="nav-link" ui-sref="home">Meal Planner</a>
+          <a class="nav-link" ui-sref="recipies">Recipies</a>
+          <img class="hamburger-icon" ng-click="planner.opencloseSlideMenu()" src="images/hamburger-icon.svg" role="button" aria-label="Hidden navegation menu button" aria-pressed="false" tabindex="0" alt="Hidden navegation menu button">
+      </nav>
+    </header>
+
+    <nav class="slide-menu-left" ng-controller="PlannerCtrl as planner">
+        <ul class="menu-items">
+            <li><a class="nav-link-slide" ui-sref="home" ng-click="planner.opencloseSlideMenu()">Meal Planner</a></li>
+            <li><a class="nav-link-slide" ui-sref="recipies" ng-click="planner.opencloseSlideMenu()">Recipies</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main ui-view>
+        
+    </main>
+
+    <footer>
+      
+    </footer>
+    
+    <script >
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('[ServiceWorker] registration successful with scope: ',    registration.scope);
+            }).catch(function(err) {
+              // registration failed :(
+              console.log('[ServiceWorker] registration failed: ', err);
+            });
+          }
+    </script>
+    <script type="text/javascript"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/planner.js"></script>
+        <script src="scripts/controllers/recipe.js"></script>
+        <script src="scripts/services/recipefinder.js"></script>
+        <script src="scripts/controllers/recipies.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

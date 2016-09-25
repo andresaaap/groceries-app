@@ -1,0 +1,9 @@
+<div id="recipies-container">
+	<div class="recipe-card" ng-repeat="recipe in recipies.recipies">
+		<img src="images/{{recipe.simage}}" alt="">
+		<h2><a ui-sref="recipe({id: recipe.id})">{{recipe.name}}</a></h2>
+		<span>{{recipe.description}}</span>	
+	</div>
+</div>
+
+

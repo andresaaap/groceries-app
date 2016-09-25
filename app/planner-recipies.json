@@ -1,0 +1,75 @@
+{
+	"id":"adsa2",
+	"array":[
+		{
+			"id":"creamy-salmon",
+			"name":"Salmon With Creamy Cucumber-Fennel Salad",
+			"image":"creamy-salmon.jpg",
+			"nutritionalInfo":{
+				"calories":484,
+				"fat":"18g",
+				"satFat":"3g",
+				"protein":"47g",
+				"carbohydrate":"33g"
+			},
+			"servings":4,
+			"ingredients":[
+				{
+					"name":"salmon",
+					"mass":170,
+					"category":"meat, fish and chicken"
+				},
+				{
+					"name":"olive oil",
+					"mass":4,
+					"category":"other food"
+				},
+				{
+					"name":"salt",
+					"mass":4,
+					"category":"other food"
+				},
+				{
+					"name":"pepper",
+					"mass":4,
+					"category":"other food"
+				}
+			]
+		},
+		{
+			"id":"spicy-salmon",
+			"name":"Spicy Salmon With Bok Choy and Rice",
+			"image":"creamy-salmon.jpg",
+			"nutritionalInfo":{
+				"calories":484,
+				"fat":"18g",
+				"satFat":"3g",
+				"protein":"47g",
+				"carbohydrate":"33g"
+			},
+			"servings":4,
+			"ingredients":[
+				{
+					"name":"salmon",
+					"mass":170,
+					"category":"meat, fish and chicken"
+				},
+				{
+					"name":"olive oil",
+					"mass":4,
+					"category":"other food"
+				},
+				{
+					"name":"salt",
+					"mass":4,
+					"category":"other food"
+				},
+				{
+					"name":"pepper",
+					"mass":4,
+					"category":"other food"
+				}
+			]
+		}
+	]
+}

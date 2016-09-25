@@ -1,0 +1,815 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background: #fafafa;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0px 1px 5px #888888;
+  position: fixed;
+  background-color: #FFFFFF;
+}
+
+a {
+  color: #000000;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  width: 80%;
+  margin: 0 0 0 auto;
+}
+
+footer {
+  width: 100%;
+  height: 280px;
+  background-color: #2e3c54;
+}
+
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* index.html */
+
+.slide-menu-left {
+  display: none;
+  padding-top: 40px; 
+  position: fixed;
+  top: 57px;
+  width: 240px;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-300px);
+  overflow-y: scroll;
+  border-right: 1px solid #e1e1e1;
+}
+
+.slide-menu-left.is-active {
+  display: block;
+  transform: translateX(0);
+}
+
+.menu-items {
+  list-style-type: none;
+}
+
+.nav-link-slide {
+  display: block;
+  width: 95%;
+  height: 50px;
+  margin: 10px auto 10px auto;
+}
+
+.hamburger-icon {
+  display: none;
+}
+/*
+  planner.html
+*/
+
+
+
+h1 {
+  width: 60%;
+  font-size: 22px;
+}
+
+.nav-link {
+  display: block;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+#planner-container {
+  width: 100%;
+  padding: 200px 0 150px 0;
+}
+
+.day {
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto 0 auto;
+  background-color: #FFFFFF;
+}
+
+.day h2 {
+  font-size: 15px;
+  width: 90%;
+  padding-left: 15px;
+}
+
+.meal {
+  width: 100%;
+  padding: 15px 35px 15px 35px;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+}
+
+.meal span {
+  font-size: 13px;
+}
+
+.add-but {
+  width: 10%;
+  background: none;
+  border: none;
+}
+
+.add-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.container-btn-new-day {
+  width: 500px;
+  margin: 0 auto 0 auto;
+
+}
+
+#btn-new-day {
+  width: 500px;
+}
+
+.container-btn-groceries-list {
+  width: 200px;
+  margin: 0 auto 30px auto;
+}
+
+#btn-groceries-list {
+  width: 200px;
+}
+
+/*
+  recipies.html
+*/
+
+#recipies-container {
+  width: 1110px;
+  margin: 0 auto 0 auto;
+  padding-left: 15px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+}
+
+.recipe-card {
+  width: 350px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+.recipe-card h2 {
+  padding-left: 16px;
+  padding-right: 15px;
+}
+
+.recipe-card span {
+  display: block;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+  /*
+    Modal new day
+  */
+
+body.active {
+  overflow: hidden;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal.active {
+  display: block;
+}
+
+#datepicker-error {
+  display: none;
+  color: #ff0000;
+  font-size: 13px;
+}
+
+.modal-content-box {
+  background-color: #fefefe;
+  position: relative;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content-box li {
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.modal-content-box li div {
+  width: 50%;
+  text-align: center;
+}
+
+#close-new-meal-modal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 0 4px 0 4px;
+  border: none;
+  background: #fafafa;
+}
+
+#close-new-day-modal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 0 4px 0 4px;
+  border: none;
+  background: #fafafa;
+}
+
+#close-groceries-list-modal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 0 4px 0 4px;
+  border: none;
+  background: #fafafa;
+}
+
+.food-cat-header {
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  width: 100%;
+}
+
+.food-cat-img {
+  width: 10%;
+  height: 10%;
+  margin: auto 4% auto 0;
+}
+
+.food-cat-title {
+  width: 86%;
+}
+
+/*
+  recipe.html
+*/
+
+#recipe-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto 0 auto;
+  padding: 100px 0 100px 0;
+  background-color: #fafafa;
+}
+
+.recipe-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+}
+
+.recipe-header-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-header-info {
+  width: 40%;
+  padding: 0 2% 0 0;
+}
+
+.recipe-header-info h2 {
+  font-size: 40px;
+}
+
+#nutritional-info {
+  font-size: 18px;
+}
+
+.recipe-header-image {
+  width: 50%;
+  margin: 0 0 0 auto;
+}
+
+.recipe-header img {
+  width: 100%;
+}
+
+.recipe-ingredients {
+  width: 80%;
+}
+
+.recipe-ingredients h3 {
+  font-size: 21px;
+}
+
+.recipe-ingredients li {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.recipe-directions {
+  width: 80%;
+}
+
+.recipe-directions h3 {
+  font-size: 21px;
+}
+
+.recipe-directions li {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 751px) and (max-width: 1110px){
+
+/* recipies.html */
+
+#recipies-container {
+  width: 95%;
+  padding-left: 0px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin: 0 auto 0 auto;
+}
+
+.recipe-card {
+  width: 32%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin: 15px 0% 15px 1%;
+}
+
+.recipe-card img {
+  width: 100%;
+}
+
+.recipe-card h2 {
+  padding-left: 16px;
+  padding-right: 15px;
+  font-size: 21px;
+}
+
+.recipe-card span {
+  display: block;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 370px) and (max-width: 750px){
+  
+  /* index.html */
+
+nav {
+  width: 90%;
+}
+
+h1 {
+  width: 85%;
+}
+
+.nav-link {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  width: 18px;
+  margin: 0 20px 0 auto;
+}
+
+  /* planner.html */
+
+
+#planner-container {
+  padding: 100px 0 80px 0;
+}
+
+.day {
+  width: 100%;
+}
+
+.meal {
+  width: 100%;
+  padding: 15px 35px 15px 35px;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+}
+
+.meal span {
+  font-size: 13px;
+}
+
+.add-but {
+  width: 10%;
+  background: none;
+  border: none;
+}
+
+.add-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.container-btn-new-day {
+  width: 100%;
+}
+
+#btn-new-day {
+  width: 100%;
+}
+
+.container-btn-groceries-list {
+  width: 200px;
+  margin: 0 auto 30px auto;
+}
+
+#btn-groceries-list {
+  width: 200px;
+}
+
+  /* Modal */
+
+.modal-content-box {
+  width: 98%; 
+}
+
+#modal-recipe-list {
+  width: 80%;
+}
+
+/* recipies.html */
+
+#recipies-container {
+  width: 95%;
+  padding-left: 0px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin: 0 auto 0 auto;
+}
+
+.recipe-card {
+  width: 46%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin: 15px 2% 15px 2%;
+}
+
+.recipe-card img {
+  width: 100%;
+}
+
+.recipe-card h2 {
+  padding-left: 16px;
+  padding-right: 15px;
+  font-size: 21px;
+}
+
+.recipe-card span {
+  display: block;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+/* recipe.html */
+#recipe-container {
+  width: 90%;
+  padding: 75px 0 75px 0;
+}
+
+.recipe-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+}
+
+.recipe-header-info {
+  width: 100%;
+  padding: 0;
+}
+
+.recipe-header-info h2 {
+  font-size: 28px;
+}
+
+.recipe-header-info {
+  width: 100%;
+}
+
+.recipe-header-image {
+  width: 100%;
+  padding: 20px 0 0 0;
+}
+
+.recipe-header img {
+  width: 100%;
+}
+
+.recipe-ingredients {
+  width: 100%;
+}
+
+.recipe-ingredients h3 {
+  font-size: 18px;
+}
+
+.recipe-ingredients li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.recipe-directions {
+  width: 100%;
+}
+
+.recipe-directions h3 {
+  font-size: 18px;
+}
+
+.recipe-directions li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 369px){
+  
+  /* index.html */
+
+nav {
+  width: 90%;
+}
+
+h1 {
+  width: 85%;
+}
+
+.nav-link {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  width: 18px;
+  margin: 0 20px 0 auto;
+}
+
+  /* planner.html */
+
+
+#planner-container {
+  padding: 100px 0 80px 0;
+}
+
+.day {
+  width: 100%;
+}
+
+.meal {
+  width: 100%;
+  padding: 15px 35px 15px 35px;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+}
+
+.meal span {
+  font-size: 13px;
+}
+
+.add-but {
+  width: 10%;
+  background: none;
+  border: none;
+}
+
+.add-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.container-btn-new-day {
+  width: 100%;
+}
+
+#btn-new-day {
+  width: 100%;
+}
+
+.container-btn-groceries-list {
+  width: 200px;
+  margin: 0 auto 30px auto;
+}
+
+#btn-groceries-list {
+  width: 200px;
+}
+
+  /* Modal */
+
+.modal-content-box {
+  width: 98%; 
+}
+
+#modal-recipe-list {
+  width: 80%;
+}
+
+/* recipies.html */
+
+#recipies-container {
+  width: 100%;
+  padding-left: 0px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.recipe-card {
+  width: 90%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin: 15px auto 15px auto;
+}
+
+.recipe-card img {
+  width: 100%;
+}
+
+.recipe-card h2 {
+  padding-left: 16px;
+  padding-right: 15px;
+}
+
+.recipe-card span {
+  display: block;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/* recipe.html */
+#recipe-container {
+  width: 90%;
+  padding: 75px 0 75px 0;
+}
+
+.recipe-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+}
+
+.recipe-header-info {
+  width: 100%;
+  padding: 0;
+}
+
+.recipe-header-info h2 {
+  font-size: 28px;
+}
+
+.recipe-header-info {
+  width: 100%;
+}
+
+.recipe-header-image {
+  width: 100%;
+  padding: 20px 0 0 0;
+}
+
+.recipe-header img {
+  width: 100%;
+}
+
+.recipe-ingredients {
+  width: 100%;
+}
+
+.recipe-ingredients h3 {
+  font-size: 18px;
+}
+
+.recipe-ingredients li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.recipe-directions {
+  width: 100%;
+}
+
+.recipe-directions h3 {
+  font-size: 18px;
+}
+
+.recipe-directions li {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+
+}
+
