@@ -1,0 +1,55 @@
+{
+	"fileId":"sdssd",
+	"id":"shrimp-pasta",
+	"name":"Shrimp, Leek, and Spinach Pasta",
+	"serves":4,
+	"time":"20 min",
+	"nutritionalInfo":{
+		"calories":691,
+		"fat":"26g",
+		"satFat":"15g",
+		"protein":"38g",
+		"carbohydrate":"80g"
+	},
+	"ingredientsDescription":[
+		{
+			"name":"short pasta",
+			"description":"3/4 pound gemelli, fusilli, or other short pasta"
+		},
+		{
+			"name":"butter",
+			"description":"2 tablespoons unsalted butter"
+		},
+		{
+			"name":"leeks",
+			"description":"2 leeks (white and light green parts only), halved lengthwise then crosswise"
+		},
+		{
+			"name":"salt",
+			"description":"kosher salt and black pepper"
+		},
+		{
+			"name":"shrimp",
+			"description":"1 pound peeled and deveined medium shrimp (raw)"
+		},
+		{
+			"name":"lemon",
+			"description":"finely grated zest of 1 lemon"
+		},
+		{
+			"name":"heavy cream",
+			"description":"3/4 cup heavy cream"
+		},
+		{
+			"name":"spinach",
+			"description":"10 ounces baby spinach (about 12 cups)"
+		}
+	],
+	"directions":[
+		"Cook the pasta according to the package directions; drain and return it to the pot.",
+		"Meanwhile, heat the butter in a large skillet over medium heat. Add the leeks, ½ teaspoon salt, and ¼ teaspoon pepper and cook, stirring occasionally, until the leeks have softened, 3 to 5 minutes.",
+		"Add the shrimp and lemon zest and cook, tossing frequently, until the shrimp is opaque throughout, 4 to 5 minutes more.",
+		"Add the cream and ½ teaspoon salt to the pasta in the pot and cook over medium heat, stirring, until slightly thickened, 1 to 2 minutes. Add the shrimp mixture and the spinach and toss to combine."
+	],
+	"image":"shrimp-pasta.jpg"
+}

@@ -4,7 +4,9 @@ This is a web app that helps you to plan the groceries you need to buy in a grou
 
 How to use it?
 
-You have to add meals to the planner. To do so you have to click the plus button next to the day you want to add it. You can add other days that you want to include in your planner. When you added all the meals of the period you want to plan, click the button "Show Groceries List"
+You have to add meals to the planner. To do so you have to click the plus button next to the day you want to add it. You can add other days that you want to include in your planner. When you added all the meals of the period you want to plan, click the button "Show Groceries List".
+
+The app only shows the recipes for each country. In the planner-recipies.json file each recipe has a country defined. It takes up to 4 seconds for the app to only show the right recipes in the planner
 
 Build & development
 

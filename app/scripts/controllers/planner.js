@@ -8,8 +8,21 @@
  * Controller of the groceriesappApp
  */
 angular.module('groceriesappApp')
-  .controller('PlannerCtrl', ['$interval', 'recipefinder','$scope', function ($interval, reci, $scope) {
+  .controller('PlannerCtrl', ['$interval', 'recipefinder','$scope' ,'$timeout', function ($interval, reci, $scope, $timeout) {
     var vm = this;
+
+    var vm = this;
+    var countryUpdate = false;
+
+    
+
+    this.currentCity = '';
+
+    this.locationLat = '';
+
+    this.locationLon = '';
+
+    this.country = '';
 
     this.days = [];
 
@@ -52,6 +65,8 @@ angular.module('groceriesappApp')
 
         var recipiesCopy = [];
         var newRecipeName = '';
+        var newRecipeCountry = '';
+        var newRecipeCountryUpdated = false;
         var newRecipeServings = '';
         var newRecipeIngredients = [];
         var newIngredientName = '';
@@ -65,26 +80,71 @@ angular.module('groceriesappApp')
 
             reci.getPlannerRecipes().then(function(data) {
               newRecipiesId = data.id;
-              if (newRecipiesId !== vm.recipiesId) {
-                vm.recipiesId = data.id;
-                recipiesCopy = data.array;
-                vm.recipies = [];
 
-                  for (var i = 0; i < recipiesCopy.length; i++) {
-                      newRecipeName = recipiesCopy[i].name;
-                      newRecipeServings = recipiesCopy[i].servings;
+              if (vm.country !== '') {
+                console.log('pais reconocido');
 
-                      for (var j = 0; j < recipiesCopy[i].ingredients.length; j++) {
-                          newIngredientName = recipiesCopy[i].ingredients[j].name;
-                          newIngredientMass = recipiesCopy[i].ingredients[j].mass;
-                          newIngredientCategory = recipiesCopy[i].ingredients[j].category;
+                if ((newRecipiesId !== vm.recipiesId)||(!countryUpdate)) {
+                  vm.recipiesId = data.id;
+                  recipiesCopy = data.array;
+                  vm.recipies = [];
 
-                          newRecipeIngredients.push(new Ingredient(newIngredientName,newIngredientMass,newIngredientMass,newIngredientCategory));
-                      }
-                      vm.recipies.push(new Recipe(newRecipeName,newRecipeServings,newRecipeIngredients));
-                      newRecipeIngredients = [];
-                  }
+                  countryUpdate = true;
+
+
+                    for (var i = 0; i < recipiesCopy.length; i++) {
+                        
+                        newRecipeCountry = recipiesCopy[i].country;
+                        newRecipeName = recipiesCopy[i].name;
+                        newRecipeServings = recipiesCopy[i].servings;
+                        
+                        if (newRecipeCountry === vm.country) {
+                          for (var j = 0; j < recipiesCopy[i].ingredients.length; j++) {
+                              newIngredientName = recipiesCopy[i].ingredients[j].name;
+                              newIngredientMass = recipiesCopy[i].ingredients[j].mass;
+                              newIngredientCategory = recipiesCopy[i].ingredients[j].category;
+
+                              newRecipeIngredients.push(new Ingredient(newIngredientName,newIngredientMass,newIngredientMass,newIngredientCategory));
+                          }
+                          vm.recipies.push(new Recipe(newRecipeName,newRecipeServings,newRecipeIngredients,newRecipeCountry));
+                          newRecipeIngredients = [];
+                        }
+                        
+                    }
+                }
               }
+              else {
+                if (newRecipiesId !== vm.recipiesId) {
+                  vm.recipiesId = data.id;
+                  recipiesCopy = data.array;
+                  vm.recipies = [];
+
+                  
+
+
+                    for (var i = 0; i < recipiesCopy.length; i++) {
+                        
+                        newRecipeCountry = recipiesCopy[i].country;
+                        newRecipeName = recipiesCopy[i].name;
+                        newRecipeServings = recipiesCopy[i].servings;
+                        
+                        
+                          for (var j = 0; j < recipiesCopy[i].ingredients.length; j++) {
+                              newIngredientName = recipiesCopy[i].ingredients[j].name;
+                              newIngredientMass = recipiesCopy[i].ingredients[j].mass;
+                              newIngredientCategory = recipiesCopy[i].ingredients[j].category;
+
+                              newRecipeIngredients.push(new Ingredient(newIngredientName,newIngredientMass,newIngredientMass,newIngredientCategory));
+                          }
+                          vm.recipies.push(new Recipe(newRecipeName,newRecipeServings,newRecipeIngredients,newRecipeCountry));
+                          newRecipeIngredients = [];
+                        
+                    }
+                }
+              }
+                          
+
+
             });
           }
           else {
@@ -96,16 +156,19 @@ angular.module('groceriesappApp')
               for (var i = 0; i < recipiesCopy.length; i++) {
                   newRecipeName = recipiesCopy[i].name;
                   newRecipeServings = recipiesCopy[i].servings;
+                  newRecipeCountry = recipiesCopy[i].country;
+                  
+                    for (var j = 0; j < recipiesCopy[i].ingredients.length; j++) {
+                        newIngredientName = recipiesCopy[i].ingredients[j].name;
+                        newIngredientMass = recipiesCopy[i].ingredients[j].mass;
+                        newIngredientCategory = recipiesCopy[i].ingredients[j].category;
 
-                  for (var j = 0; j < recipiesCopy[i].ingredients.length; j++) {
-                      newIngredientName = recipiesCopy[i].ingredients[j].name;
-                      newIngredientMass = recipiesCopy[i].ingredients[j].mass;
-                      newIngredientCategory = recipiesCopy[i].ingredients[j].category;
-
-                      newRecipeIngredients.push(new Ingredient(newIngredientName,newIngredientMass,newIngredientMass,newIngredientCategory));
-                  }
-                  vm.recipies.push(new Recipe(newRecipeName,newRecipeServings,newRecipeIngredients));
-                  newRecipeIngredients = [];
+                        newRecipeIngredients.push(new Ingredient(newIngredientName,newIngredientMass,newIngredientMass,newIngredientCategory));
+                    }
+                    vm.recipies.push(new Recipe(newRecipeName,newRecipeServings,newRecipeIngredients,newRecipeCountry));
+                    newRecipeIngredients = [];
+                  
+                  
               }
 
               vm.recipiesId = data.id;
@@ -116,7 +179,7 @@ angular.module('groceriesappApp')
 
         
       
-    }, 500);
+    }, 1000);
 
     $scope.$on('$destroy', function() {
       // Make sure that the interval is destroyed too
@@ -795,5 +858,46 @@ angular.module('groceriesappApp')
 
       return item;
     };
+
+     // check for Geolocation support
+    if (navigator.geolocation) {
+      $scope.$on('$viewContentLoaded', function () {
+      console.log('sssdsd');
+        var startPos;
+        var geoOptions = {
+           timeout: 10 * 1000
+        };
+        var geoSuccess = function(position) {
+          startPos = position;
+          console.log('sssdsd');
+
+          vm.locationLat = startPos.coords.latitude;
+          vm.locationLon = startPos.coords.longitude;
+          
+        };
+
+        var geoError = function(error) {
+          console.log('Error occurred. Error code: ' + error.code);
+          // error.code can be:
+          //   0: unknown error
+          //   1: permission denied
+          //   2: position unavailable (error response from location provider)
+          //   3: timed out
+        };
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+    });
+    }
+    else {
+      console.log('Geolocation is not supported for this Browser/OS version yet.');
+    }
+
+    $timeout(function() {
+      console.log(vm.locationLat.toString());
+       $.get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+vm.locationLat.toString()+','+vm.locationLon.toString()+'&sensor=false').then(function(data) {
+          
+          vm.country = data.results[7].address_components[0].long_name;
+          console.log(data);
+       });
+    },4000);
 
   }]);

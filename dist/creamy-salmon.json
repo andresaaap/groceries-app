@@ -1,0 +1,57 @@
+{
+	"id":"creamy-salmon",
+	"name":"Salmon With Creamy Cucumber-Fennel Salad",
+	"serves":4,
+	"time":"20 min",
+	"nutritionalInfo":{
+		"calories":484,
+		"fat":"18g",
+		"satFat":"3g",
+		"protein":"47g",
+		"carbohydrate":"33g"
+	},
+	"ingredientsDescription":[
+		{
+			"name":"salmon",
+			"description":"4 6-ounce pieces skinless salmon fillet"
+		},
+		{
+			"name":"olive oil",
+			"description":"1 tablespoon olive oil"
+		},
+		{
+			"name":"cayenne pepper",
+			"description":"1/4 teaspoon cayenne pepper"
+		},
+		{
+			"name":"salt",
+			"description":"kosher salt and black pepper"
+		},
+		{
+			"name":"lemon",
+			"description":"1 lemon, thinly sliced"
+		},
+		{
+			"name":"greek yogurt",
+			"description":"1/2 cup plain low-fat Greek yogurt"
+		},
+		{
+			"name":"cider vinegar",
+			"description":"1tablespoon cider vinegar"
+		},
+		{
+			"name":"fennel",
+			"description":"1 fennel bulb, cored and thinly sliced, plus 2 tablespoons chopped fennel fronds"
+		},
+		{
+			"name":"cucumber",
+			"description":"1/2 English cucumber, thinly sliced"
+		}
+	],
+	"directions":[
+		"Heat oven to 400° F. Rub the salmon with the oil and place on a rimmed baking sheet. Season with the cayenne and ¼ teaspoon each salt and black pepper. Top with the lemon slices and bake until opaque throughout, 8 to 12 minutes.",
+		"Meanwhile, whisk together the yogurt, vinegar, and 1/4 teaspoon each salt and black pepper in a large bowl. Add the fennel, fennel fronds, and cucumber and toss to coat.",
+		"Serve the salmon with the cucumber-fennel salad"
+	],
+	"image":"creamy-salmon.jpg"
+}
