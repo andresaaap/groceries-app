@@ -11,10 +11,7 @@ angular.module('groceriesappApp')
   .controller('PlannerCtrl', ['$interval', 'recipefinder','$scope' ,'$timeout', function ($interval, reci, $scope, $timeout) {
     var vm = this;
 
-    var vm = this;
     var countryUpdate = false;
-
-    
 
     this.currentCity = '';
 
@@ -56,7 +53,7 @@ angular.module('groceriesappApp')
 
     this.otherFood = [];
 
-    //Load app info
+    //Load the recipes info and update them
 
     var reqPlan;
     var timeCycle = 0;
@@ -81,8 +78,11 @@ angular.module('groceriesappApp')
             reci.getPlannerRecipes().then(function(data) {
               newRecipiesId = data.id;
 
+              //If the geolocation of the user is unknown then show all
+              //recipes from all countries
+
               if (vm.country !== '') {
-                console.log('pais reconocido');
+                
 
                 if ((newRecipiesId !== vm.recipiesId)||(!countryUpdate)) {
                   vm.recipiesId = data.id;
@@ -320,7 +320,6 @@ angular.module('groceriesappApp')
 
     };
 
-    //Open-close modals
 
     //Trap tab key in meal modal 
 
@@ -405,7 +404,6 @@ angular.module('groceriesappApp')
     vm.addDayListener();
 
     //Trap key in groceries list modal
-     //Trap tab key in day modal 
 
     this.addGroceriesListener = function() {
       var modalGroceries = document.getElementById('modal-groceries-list');
@@ -438,6 +436,7 @@ angular.module('groceriesappApp')
 
     vm.addGroceriesListener();
 
+    //Open-close modals
     this.openMealModal = function(pday) {
        currentFocusedElement = document.activeElement;
        var selector = $('#modal-new-meal');
@@ -859,6 +858,9 @@ angular.module('groceriesappApp')
       return item;
     };
 
+    // Find the geolocation of the users and save the of the country
+    // of the user. This is used for the geolocation functionality of the app
+    // to only show recipes designated to a determined place.
      // check for Geolocation support
     if (navigator.geolocation) {
       $scope.$on('$viewContentLoaded', function () {

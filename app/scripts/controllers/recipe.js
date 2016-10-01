@@ -14,6 +14,8 @@ angular.module('groceriesappApp')
     this.recipe = '';
     this.recipeId = '';
 
+    //Get the recipe info and update it
+
     reci.getRecipe($stateParams.id).then(function(data) {
       vm.recipe = data;
     });
@@ -50,39 +52,7 @@ angular.module('groceriesappApp')
       if (angular.isDefined(reqReci)) {
         $interval.cancel(reqReci);
         reqReci = undefined;
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('destroy recipe');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
-        console.log('--------');
+       
       }
     });
 

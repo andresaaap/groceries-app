@@ -13,6 +13,8 @@ angular.module('groceriesappApp')
     this.recipies = [];
     this.recipiesId = '';
 
+    //Get recipes info and update them
+
     reci.getRecipies().then(function(data) {
     	vm.recipies = data.array;
       vm.recipiesId = data.id;
